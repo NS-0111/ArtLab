@@ -1,77 +1,145 @@
-# ArtLab — Digital Art Gallery
+# ArtLab — Interactive Digital Art Gallery
 
-<p align="center">
-  <strong>Discover. Explore. Create.</strong>
-  <br />
-  An interactive digital gallery designed to bring art closer to everyone.
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
-</p>
+An interactive digital gallery for exploring artworks from the Metropolitan Museum of Art collection, featuring artwork search, catalog browsing and collection management.
 
 ---
 
-## Overview
+## Sumário
 
-**ArtLab** is a digital art gallery created to make artistic exploration more accessible and engaging.
+- [Sobre o projeto](#sobre-o-projeto)
+- [Características principais](#características-principais)
+- [Como executar](#como-executar)
+- [Como funciona](#como-funciona)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Notas importantes](#notas-importantes)
+- [Limitações](#limitações)
+- [Licença e créditos](#licença-e-créditos)
+- [Equipe de desenvolvimento](#equipe-de-desenvolvimento)
 
-The platform brings together an interactive art catalog, artwork discovery, and personal collection management, allowing users to explore masterpieces and build their own curated galleries.
+---
 
-Through integration with the **Metropolitan Museum of Art Collection API**, ArtLab provides access to artwork information and images from one of the world's most recognized art institutions.
+## Sobre o projeto
 
-## Features
+O ArtLab é um projeto acadêmico desenvolvido na disciplina de Programação Funcional (COMP0393), com o objetivo de criar uma galeria digital interativa utilizando tecnologias web.
 
-- **Digital Art Gallery:** Explore a curated selection of artworks from different artistic periods.
-- **Artwork Catalog:** Browse and discover artworks from the Metropolitan Museum of Art collection.
-- **Smart Search:** Search for artworks using relevant terms, including titles and artists.
-- **Personal Collection:** Add your own artworks to the catalog.
-- **Artwork Management:** Edit and delete custom artwork entries.
-- **Local Persistence:** Store personal collections and cached artworks using browser Local Storage.
-- **Art History Timeline:** Discover important artistic periods throughout history.
-- **Team Showcase:** Meet the people behind the project.
+A aplicação permite explorar obras de arte, consultar informações de diferentes artistas e pesquisar itens do acervo do Metropolitan Museum of Art por meio de sua API pública.
 
-## Tech Stack
+O projeto também implementa operações de gerenciamento de obras e armazenamento local, proporcionando uma experiência interativa de navegação e organização do catálogo.
 
-| Technology | Purpose |
+## Características principais
+
+- Galeria digital com apresentação de obras de arte.
+- Integração com a API pública do Metropolitan Museum of Art.
+- Pesquisa de obras por termos relacionados ao acervo.
+- Catálogo com informações sobre título, artista, ano e técnica artística.
+- Adição de novas obras ao catálogo.
+- Edição e exclusão de obras cadastradas.
+- Armazenamento local de dados utilizando Local Storage.
+- Sistema de cache para reduzir requisições à API.
+- Linha do tempo com diferentes períodos da história da arte.
+- Interface para apresentação da equipe de desenvolvimento.
+
+---
+
+## Como executar
+
+### Pré-requisitos
+
+- Navegador web moderno.
+- Git.
+- Python 3 ou outro servidor HTTP local.
+
+### Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/NS-0111/ArtLab.git
+   ```
+
+2. Acesse o diretório:
+
+   ```bash
+   cd ArtLab
+   ```
+
+3. Inicie um servidor HTTP local:
+
+   ```bash
+   python -m http.server 8000
+   ```
+
+4. Acesse a aplicação pelo navegador:
+
+   ```text
+   http://localhost:8000
+   ```
+
+---
+
+## Como funciona
+
+O ArtLab utiliza JavaScript para controlar a interface, processar pesquisas, consultar dados externos e gerenciar as informações armazenadas no navegador.
+
+### Fluxo de funcionamento
+
+```text
+ArtLab
+   |
+   ├── Homepage
+   |     ├── Featured Artworks
+   |     ├── Search
+   |     └── Art History Timeline
+   |
+   ├── Art Catalog
+   |     ├── Search Artworks
+   |     ├── Add Artwork
+   |     ├── Edit Artwork
+   |     └── Delete Artwork
+   |
+   ├── Metropolitan Museum API
+   |     ├── Search Collection
+   |     └── Retrieve Artwork Details
+   |
+   └── Local Storage
+         ├── User Collection
+         └── Artwork Cache
+```
+
+### Etapas de processamento
+
+| Etapa | Funcionamento |
 |---|---|
-| HTML5 | Page structure and semantic markup |
-| CSS3 | Layout, styling and visual presentation |
-| JavaScript (ES6+) | Application logic and interactivity |
-| Web APIs | Browser functionality and Local Storage |
-| Fetch API | Asynchronous communication with external services |
-| Metropolitan Museum of Art API | Artwork data and image discovery |
+| 1. Pesquisa | O usuário informa termos para localizar obras no catálogo |
+| 2. Consulta à API | A aplicação envia requisições à API do Metropolitan Museum |
+| 3. Recuperação | Os identificadores encontrados são utilizados para recuperar os detalhes das obras |
+| 4. Cache | Os dados recuperados podem ser armazenados localmente para consultas futuras |
+| 5. Exibição | As informações são renderizadas dinamicamente na interface |
+| 6. Gerenciamento | O usuário pode adicionar, editar e excluir obras cadastradas localmente |
 
-### External Services
+---
 
-- [Metropolitan Museum of Art Collection API](https://metmuseum.github.io/) — Provides access to artwork records and collection information.
-- [Google Fonts](https://fonts.google.com/) — Typography using the Inter font family.
-- [CORS Proxy](https://corsproxy.io/) — Used to facilitate cross-origin API requests.
-
-## Project Structure
+## Estrutura do projeto
 
 ```text
 ArtLab/
 │
-├── assets/
+├── assets/                  # Recursos visuais
 │
 ├── css/
-│   ├── homepage_ui.css
-│   ├── catalog_ui.css
-│   └── about_ui.css
+│   ├── homepage_ui.css       # Estilos da página inicial
+│   ├── catalog_ui.css        # Estilos do catálogo
+│   └── about_ui.css          # Estilos da página da equipe
 │
 ├── src/
-│   ├── homepage_ui.js
-│   ├── catalog_ui.js
-│   └── collection.js
+│   ├── homepage_ui.js        # Lógica da página inicial
+│   ├── catalog_ui.js         # Lógica do catálogo
+│   └── collection.js         # Gerenciamento de obras e armazenamento
 │
-├── index.html
-├── catalog.html
-├── about.html
+├── index.html                # Página inicial
+├── catalog.html              # Catálogo de obras
+├── about.html                # Equipe de desenvolvimento
 │
 ├── .editorconfig
 ├── .gitattributes
@@ -80,129 +148,62 @@ ArtLab/
 └── README.md
 ```
 
-## Getting Started
+---
 
-Follow these steps to run ArtLab locally.
+## Tecnologias utilizadas
 
-### Prerequisites
-
-You only need:
-
-- A modern web browser.
-- Git.
-- Python 3 or another local HTTP server.
-
-No additional package manager or build process is required.
-
-### Installation
-
-**1. Clone the repository**
-
-```bash
-git clone https://github.com/NS-0111/ArtLab.git
-```
-
-**2. Navigate to the project directory**
-
-```bash
-cd ArtLab
-```
-
-**3. Start a local development server**
-
-Using Python:
-
-```bash
-python -m http.server 8000
-```
-
-**4. Open the application**
-
-Navigate to:
-
-```text
-http://localhost:8000
-```
-
-You can now explore the gallery and interact with its features.
-
-## API Integration
-
-ArtLab integrates with the Metropolitan Museum of Art Collection API to retrieve artwork information.
-
-The application uses two main API endpoints:
-
-| Endpoint | Description |
+| Tecnologia | Aplicação no projeto |
 |---|---|
-| `/search` | Searches the museum collection for matching artworks |
-| `/objects/{objectID}` | Retrieves detailed information about a specific artwork |
+| HTML5 | Estruturação das páginas da aplicação |
+| CSS3 | Estilização e organização visual da interface |
+| JavaScript (ES Modules) | Lógica, interatividade e manipulação dinâmica do conteúdo |
+| Fetch API | Comunicação assíncrona com serviços externos |
+| Local Storage | Persistência local e armazenamento em cache |
+| Metropolitan Museum API | Consulta ao acervo e recuperação de informações sobre obras |
+| Git e GitHub | Versionamento e hospedagem do código-fonte |
 
-The retrieved information includes:
+---
 
-- Artwork title.
-- Artist name.
-- Year of acquisition.
-- Artistic medium.
-- Artwork image URLs.
+## Notas importantes
 
-The application also implements a local caching mechanism to reduce unnecessary requests and improve the browsing experience.
+- A aplicação utiliza a API pública do Metropolitan Museum of Art.
+- As consultas externas dependem de conexão com a internet.
+- O acesso à API utiliza um serviço de proxy para contornar restrições de CORS.
+- As informações adicionadas pelo usuário são armazenadas no navegador por meio do Local Storage.
+- O cache local permite reutilizar informações de obras já consultadas.
 
-For more information, visit the [official API documentation](https://metmuseum.github.io/).
+Documentação oficial: [Metropolitan Museum of Art Collection API](https://metmuseum.github.io/).
 
-## Data Persistence
+## Limitações
 
-ArtLab uses the browser's **Local Storage** to maintain artwork information between sessions.
+- A aplicação não possui backend ou banco de dados remoto.
+- Os dados cadastrados pelo usuário ficam restritos ao armazenamento local do navegador.
+- A disponibilidade das obras pesquisadas depende da API externa.
+- A utilização do serviço de proxy introduz uma dependência de terceiros nas requisições externas.
 
-Two storage categories are implemented:
+---
 
-- **User Collection:** Stores artworks manually added or modified by users.
-- **Cache Collection:** Stores artwork information retrieved from the external API.
+## Licença e créditos
 
-This approach allows the application to maintain a personal collection without requiring a dedicated backend or database.
+Este projeto utiliza a licença MIT, conforme especificado no arquivo [LICENSE](LICENSE).
 
-> **Note:** Collections are stored locally in the browser. Clearing browser data or using another browser or device will not preserve the same collection.
+Agradecimentos ao [Metropolitan Museum of Art](https://www.metmuseum.org/) pela disponibilização pública de seu acervo por meio da API de coleção.
 
-## Project Goals
+## Equipe de desenvolvimento
 
-ArtLab was developed with the following goals:
+Projeto desenvolvido colaborativamente por estudantes de Ciência da Computação da Universidade Federal de Sergipe (UFS).
 
-- Encourage the exploration of art and cultural heritage.
-- Provide an accessible digital environment for discovering artworks.
-- Practice frontend development and JavaScript programming.
-- Explore external API integration and asynchronous data retrieval.
-- Apply CRUD operations and browser-based data persistence.
-- Develop collaborative software engineering skills.
-
-## Development Team
-
-This project was developed collaboratively by Computer Science students at the Federal University of Sergipe.
-
-| Contributor | GitHub |
+| Integrante | GitHub |
 |---|---|
 | Anthony Levi T. dos Santos | [@aCube1](https://github.com/aCube1) |
-| Nicolle Rillary Santana Silva | [@imnicolle](https://github.com/NS-0111) |
+| Nicolle Rillary Santana Silva | [@NS-0111](https://github.com/NS-0111) |
 | Isaac Nascimento Santana | [@Isaacnsantana](https://github.com/Isaacnsantana) |
 | Mateus Macedo Gonzaga | [@Mat-Macedo](https://github.com/Mat-Macedo) |
-
-## License
-
-This project is distributed under the **MIT License**.
-
-See the [LICENSE](LICENSE) file for more information.
-
-## Acknowledgements
-
-Special thanks to:
-
-- [The Metropolitan Museum of Art](https://www.metmuseum.org/) for making its collection data publicly accessible.
-- The open-source community for the tools and resources that support projects like this.
 
 ---
 
 <p align="center">
   <strong>ArtLab</strong>
   <br />
-  <i>Where technology meets art.</i>
-  <br /><br />
-  Developed with curiosity, creativity and collaboration.
+  Exploring art through technology.
 </p>

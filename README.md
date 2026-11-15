@@ -115,10 +115,3 @@ ArtLab
    └── Local Storage
          ├── User Collection
          └── Artwork Cache
-```
-
-### Processing Stages
-
-| Stage | Description |
-|---|---|
-| 1. Search | The

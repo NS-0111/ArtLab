@@ -1,5 +1,18 @@
 # ArtLab — Interactive Digital Art Gallery
 
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Metropolitan_Museum_API-000000?style=for-the-badge&logo=themet&logoColor=white" />
+  <img src="https://img.shields.io/badge/Local_Storage-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" />
+</p>
+
+An interactive digital gallery for exploring artworks from the Metropolitan Museum of Art collection, featuring artwork search, catalog browsing and collection management.
+
+---
+
+## Sumário
 An interactive digital gallery for exploring artworks from the Metropolitan Museum of Art collection, featuring artwork search, catalog browsing and collection management.
 
 ---

@@ -162,7 +162,7 @@ This approach allows the application to maintain a personal collection without r
 
 > **Note:** Collections are stored locally in the browser. Clearing browser data or using another browser or device will not preserve the same collection.
 
-## 🎯 Project Goals
+## Project Goals
 
 ArtLab was developed with the following goals:
 
@@ -180,7 +180,7 @@ This project was developed collaboratively by Computer Science students at the F
 | Contributor | GitHub |
 |---|---|
 | Anthony Levi T. dos Santos | [@aCube1](https://github.com/aCube1) |
-| Nicolle Rillary Santana Silva | [@imnicolle](https://github.com/imnicolle) |
+| Nicolle Rillary Santana Silva | [@imnicolle](https://github.com/NS-0111) |
 | Isaac Nascimento Santana | [@Isaacnsantana](https://github.com/Isaacnsantana) |
 | Mateus Macedo Gonzaga | [@Mat-Macedo](https://github.com/Mat-Macedo) |
 
